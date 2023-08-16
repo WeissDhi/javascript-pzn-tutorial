@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arrays</title>
+    </head>
+
+    <body>
+        <style>
+        h1{
+            text-align: center;
+        }
+        table{
+            text-align: center;
+            width: 75%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: center;
+            padding: 26px;
+            border: 1px solid black;
+            font-size: 24px;
+        }
+        p{
+            color : black;
+            font-family: 'JetBrains Mono';
+        }
+    </style>
+        <h1>Operasi Arrays</h1>
+        <table border="1">
+            <tr>
+                <th>Operasi</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>array.push</td>
+                <td>Menambah data ke array (create)</td>
+            </tr>
+            <tr>
+                <td>array.length</td>
+                <td>untuk mendapatkan panjang array</td>
+            </tr>
+            <tr>
+                <td>array[index]</td>
+                <td>mendapatkan data posis index (read)</td>
+            </tr>
+            <tr>
+                <td>array.[index] = value</td>
+                <td>Mengubah data di posisi index (update)</td>
+            </tr>
+            <tr>
+                <td>delet array[index]</td>
+                <td>menghapus data di posisi index, namun index tidak bergeser
+                    (delete)</td>
+            </tr>
+        </table>
+        <script>
+            let arrayKosong= []; //merupakan array kosong
+            let arrayIsi=["1","2","3","4","5","6","7"];
+            console.info(arrayIsi);
+            //Array Awal
+            let arrayData= ["Teuku", "Ardhi", 'Firmansyah', 1, 23.5, true]; //ada 5 index
+
+            //menambah data (create)
+            arrayData.push("Belajar", "javascript")//akan bertambah ke index 6 dan 7
+            console.table(arrayData);
+
+            //mendapatkan panjang array
+            console.info("panjang array data adalah: "+arrayData.length);
+
+            //melihat/mendapatkan posisi data (read)
+            console.info(arrayData[2]);
+            console.info(arrayData[7]);
+            console.info(arrayData[4]);
+
+            //mengubah data array (update)
+            arrayData [0] = 'Saya';
+            arrayData [1] = 'Sedang';
+            arrayData [2] = 'Ingin';
+            console.table(arrayData);
+
+            //menghapus data array (delete) namun tidak bergeser index nya
+            delete arrayData[3];
+            delete arrayData[4];
+            delete arrayData[5];
+            console.table(arrayData);
+
+            //menambah array baru lagi maka akan tersimpan di index baru selanjutnya bukan menggantikan posisi array yang terdelete
+            arrayData.push("Di Youtube", "dan", "Di UDEMY")
+            console.table(arrayData);
+
+            //mengupdate kembali array yang telah dihapus
+            arrayData[3]=1;
+            arrayData[4]=2.56;
+            arrayData[5]=true;
+            console.table(arrayData);
+        </script>
+    </body>
+</html>

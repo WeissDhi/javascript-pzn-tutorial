@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Operator logika di non boolean</title>
+    </head>
+    <body>
+    <style>
+    body{
+    font-family: 'jetbrains mono';
+    }
+    p{
+     font-family: cursive;
+     text-align: justify;
+     font-size: 16px;
+    }
+    h1{
+        font-size: 18px;
+        padding-left: 8px;
+    }
+    ul{
+        margin-left: 0px;
+        text-align: left;
+        padding-left: 20px;
+        margin-top: 8px;
+    }
+    </style>
+        <h1>Operator OR (||) di Non Boolean</h1>
+        <ul>
+            <li>Operator logika OR (||), membaca dari kiri ke kanan. </li>
+            <li>Operator ini akan mengambil nilai pertama yang truthy</li>
+            <li>Jika tidak ada satupun yang bernilai truthy, maka yang terakhir yang akan diambil</li>
+        </ul>   
+        <script>
+            //Operator Logic OR (||) di non boolean
+            console.info("Hello"|| null); //hello
+            console.info("" || []); //array kosong
+            console.info("0" || "Noll"); //0
+            console.info(0 || "NOL"); //"Nol"
+            console.info(null || "NULL");
+            console.info(undefined || "UNDEFINED"); //"UNDEFINED"
+            console.info(0 || false); //false (nilai terakhir karna tidak ada truthy)
+            console.info("=================================");
+        </script>     
+        <h1>Operator AND (&&) di non boolean</h1>
+        <ul>
+            <li>Operator logika AND (&&), membaca dari kiri ke kanan </li>
+            <li>Operator ini akan mengambil nilai pertama yang falsy. </li>
+            <li>Jika tidak ada satupun yang bernilai truthy, maka yang terakhir yang akan diambil</li>
+        </ul>
+        <script>
+            //Operator Logic AND (&&) di non boolean nyari yang salah dulu
+            console.info("Hello"&& null); null
+            console.info("" && {}); //"string kosong"
+            console.info("0" && "Nol"); //NOL  (nilai terakhir karna tidak ada falsy)
+            console.info(0 && "NOL"); //"0"
+            console.info(null && "NULL");//null
+            console.info(undefined && "UNDEFINED"); //"undefined"
+            console.info(0 && false); //0 
+        </script>  
+
+    </body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Popup 2</title>
+    </head>
+    <body>
+        <style>
+        p{
+            text-align: center;
+            font-family: monospace;
+            font-size: 24px;
+        }
+    </style>
+        <script>
+    // alert digunakan untuk menampilkan pesan peringatan kepada pengguna.
+    alert("Halo! Ini adalah pesan peringatan.");
+
+    //prompt meminta input string dari pengguna melalui dialog dan mengembalikan nilai yang dimasukkan.
+    let nama = prompt("Masukkan nama Anda:");
+    if (nama !== null && nama !== "") {
+      alert("Halo, " + nama + "! Selamat datang.");
+    } else {
+      alert("Anda tidak memasukkan nama.");
+    }   
+
+
+    //confirm digunakan untuk meminta konfirmasi dari pengguna dengan pilihan "OK" atau "Batal".
+    let konfirmasi = confirm("Apakah Anda yakin ingin melanjutkan?");
+    if (konfirmasi) {
+      alert("Anda memilih untuk melanjutkan.");
+    } else {
+      alert("Anda membatalkan tindakan.");
+    }
+
+    </script>
+
+    </body>
+</html>

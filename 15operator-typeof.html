@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator typeof</title>
+</head>
+<body>
+    <style>
+        p{
+            text-align: center;
+            font-family: 'Jetbrains Mono';
+            font-size: 24px
+        }
+    </style>
+    <p>Pada Javascript terkadang kita membutuhkan untuk mengecek tipe data pada variable</p>
+    <p>Karena pada JavaScript Menggunakan Dynamic Tipe Data (tidak didefinisikan tipedatanya)</p>
+    <script>
+        let data= [];
+
+        const tipedata = typeof data;
+        document.writeln(`<p>Tipe Datanya Adalah : ${tipedata}</p>`);
+    </script>
+</body>
+</html>

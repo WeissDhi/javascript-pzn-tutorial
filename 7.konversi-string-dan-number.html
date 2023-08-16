@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>konversi string dan number</title>
+    </head>
+    <body>
+        <style>
+            table {
+                width: 50%;
+                margin: auto;
+                border-collapse: collapse;
+            }
+            th, td {
+                text-align: center;
+                padding: 10px;
+                border: 1px solid black;
+            }
+            p{
+                color : black;
+                font-family: 'JetBrains Mono';
+            }
+        </style>
+
+        <table border="1">
+            <tr>
+                <th>Function</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>parseInt(String)</td>
+                <td>Mengonversi dari string ke bilangan bulat (int)</td>
+            </tr>
+            <tr>
+                <td>ParseFloat()</td>
+                <td>Mengonversi dari string ke bilangan pecahan (float)</td>
+            </tr>
+            <tr>
+                <td>Number(String)</td>
+                <td>Mengonversi dari string ke bilagan number (int maupun float)</td>
+            </tr>
+            <tr>
+                <td>number.toString()</td>
+                <td>mengonversi dari number ke string</td>
+            </tr>
+        </table>
+
+        <script>
+            const nilai1 = '1';//1
+            const nilai2 = 2;
+            document.writeln(`<p> total nilai  adalah ${nilai1+nilai2}</p>`);//belum dikonversi sehinggal 1+'2' =12
+
+            document.write(`<p>${parseInt('1.9')} </p>`); //to int jadi tidak menghiraukan angka dibelakang koma
+            document.write(`<p>${parseFloat('2.7')} </p>`); //to float jadi bilangan pecahan
+            document.writeln(`<p>${Number('2.2341')} </p>`); //flexible bisa int bisa float
+
+            //pengoprasian menggunakan to string
+            const a=1;
+            const b = 39;
+            const total = a.toString() + b.toString(); //139
+            document.writeln(`<p> ${total} </p>`);
+
+            //NaN (not a number)
+
+            //jika memakai parseInt dan parseFloat masih ada toleransi
+            document.writeln(`<p>${parseInt('138asep')} </p>`)//ignore huruf atau kata
+            document.writeln(`<p>${parseFloat('12.8asep')} </p>`)
+            document.writeln(`<p>${parseInt('a138asep')} </p>`) //jika kata di depan maka akan menghasilkan NaN
+
+            //jika memakai number maka tidak ada toleransi satu huruf pun
+            document.writeln(`<p>${Number('138asep')} </p>`) //NaN
+            document.writeln(`<p>${Number('12.8asep')} </p>`)//NaN
+            document.writeln(`<p>${Number('12')} </p>`)//12
+
+            //mengoperasikan nilai NaN
+            const first = Number("salah"); // NaN
+            const totalNumber = first + 100; //hasilnya tetap nan
+            document.writeln(`<p>${totalNumber}</p>`);
+            
+            //fungsi untuk mengecek jika itu NaN atau Bukan
+            document.writeln(`<p>${isNaN(a)}</p>`);//false karna a number = 39
+            document.writeln(`<p>${isNaN(100)}</p>`); //false karna 100 number
+            document.writeln(`<p>${isNaN(NaN)}</p>`); //true 
+            document.writeln(`<p> ${isNaN('123.4a')}</p>`)// true not a number
+            document.writeln(`<p> ${isNaN('100')}</p>`)// false karena 100 == '100';
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nullish coalescing Operator</title>
+    </head>
+    <body>
+        <p>operator yang digunakan untuk mengembalikan nilai kedua jika nilai
+            pertama adalah null atau undefined. </p>
+        <p>Nullish value = null dan undefine</p>
+        <p>Syntaxnya adalah: <br> const variable = nilai1 ?? nilai2; </p>
+
+        <script>
+        let parameter = null;
+
+        let data = parameter;
+        //tanpa mengguankan nullish operator
+        if(data === null || data === undefined){
+            data = "Nilai default"
+        }
+        document.writeln(`<p>${data} </p>`);
+
+        
+        //menggunakan nullish operator
+        data = parameter ?? "Nilai Default";
+        document.writeln(`<p>${data} </p>`);
+
+        //contoh 
+        const nilai1 = null;
+        const nilai2 = "Nilai default";
+
+        const hasil = nilai1 ?? nilai2;
+
+        document.writeln(`<p>${hasil} </p>`);
+    </script>
+    </body>
+</html>

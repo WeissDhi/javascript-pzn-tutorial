@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>Optional chaining operator (?) merupakan operator yang digunakan
+            untuk mengamankan ketika
+            kita ingin mengakses property sebuah object dari data nullish
+            <br>Jika kita mencoba mengakses property dari sebuah object dari
+            data nullish tanpa menggunakan
+            optional chaining operator, maka akan terjadi error</p>
+
+        <p>Opsional chaining adalah fitur baru dalam JavaScript yang
+            diperkenalkan dalam ECMAScript 2020 (ES11) yang memungkinkan kita
+            untuk mengakses properti dari suatu objek atau memanggil metode dari
+            suatu objek tanpa perlu khawatir tentang apakah objek tersebut
+            benar-benar ada atau tidak. Dengan kata lain, opsional chaining
+            memungkinkan kita untuk "menghindari" kesalahan yang biasanya muncul
+            saat mencoba mengakses properti atau metode dari objek yang tidak
+            didefinisikan.</p>
+        <pre class="language-javascript">
+            const user = {
+                id: 1,
+                name: 'John',
+                address: {
+                  city: 'Jakarta',
+                  postalCode: '12345'
+                }
+              };
+              
+              // Mengakses properti pada objek yang ada
+              const cityName = user.address?.city; // 'Jakarta'
+              const postalCode = user.address?.postalCode; // '12345'
+              
+              // Mengakses properti pada objek yang tidak ada
+              const phoneNumber = user.contact?.phoneNumber; // undefined
+              
+              // Memanggil metode pada objek yang ada
+              const formattedName = user.name?.toUpperCase(); // 'JOHN'
+              
+              // Memanggil metode pada objek yang tidak ada
+              const greeting = user.greet?.(); // undefined
+              
+        </pre>
+        <p>Dalam contoh di atas, tanda tanya (?) ditempatkan sebelum tanda titik
+            (.) untuk mengindikasikan bahwa kita hanya ingin mengakses properti
+            atau memanggil metode jika objek yang bersangkutan ada. Jika objek
+            tidak ada, hasilnya akan menjadi undefined.</p>
+        <p>Opsional chaining sangat berguna ketika kita bekerja dengan objek
+            yang mungkin memiliki struktur yang kompleks atau saat kita ingin
+            memastikan bahwa kita tidak mendapatkan kesalahan ketika mencoba
+            mengakses properti atau metode dari objek yang belum pasti
+            keberadaannya.</p>
+        <script>
+                const person = {
+                    address: {
+                        country : "Indonesia"
+                    }
+                };
+            
+                let country = person?.address?.country;
+            
+                // if(person.address !== undefined && person.address !== null){
+                //     country = person.address.country;
+                // }
+            
+                document.writeln(`SUKSES`);
+            
+                document.writeln(`<p>${country}</p>`);
+            
+                document.writeln(`SUKSES`);
+            
+            </script>
+    </body>
+</html>

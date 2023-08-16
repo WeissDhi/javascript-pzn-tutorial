@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tipe Data Object</title>
+    </head>
+    <body>
+        <script>
+            //object 
+            let kosong = {};
+            //kemudian diisi
+            kosong ["data1"] = 12;
+            kosong ["data2"] = 12.512;
+            kosong ["data3"] = "Hello World !";
+            console.table(kosong);
+
+            //membuat object baru (create)
+            console.info(' ');
+            console.info('Create');
+            const orang = {
+                Nama : "Teuku Ardhi",
+                alamat : "Jakarta",
+                umur : 20,
+                "alamat email" : 'teuku@gmail.com'
+            }
+            console.table(orang);
+
+
+            //membaca data (read)
+            console.info(' ');
+            console.info('Read');
+            console.info(`Nama orangnya adalah ${orang.Nama}`);
+            console.info(`Alamat orangnya adalah ${orang.alamat}`);
+            console.info(`Umur orangnya adalah ${orang["umur"]} tahun`);//yang tidak memakai titik
+            console.info('alamat emailnya:'+orang["alamat email"]);
+            console.info(' ');
+
+
+            //mengubah property atau attribute (update)
+            orang["alamat email"] = 'teukuardhi228@gmail.com';
+            orang.alamat = "Tangerang";
+            orang["Nama"] = "Firmansyah Al Ghozali";
+            console.info('Update');
+            console.table(orang);
+            console.info(' ');
+
+            //menghapus property atau attribute (delete)
+            console.info('delete');
+            delete orang.alamat;
+            delete orang['alamat email'];
+            console.table(orang);
+            console.info(' ');
+
+            //update lagi
+            console.info('Update lagi');
+            orang.alamat = "Bandung";
+            orang['alamat email'] = "cheaterbanned@gmail.com";
+            console.table(orang);
+
+            // Membuat objek buah-buahan
+            var buah = {
+                nama: 'Apel',
+                warna: 'Merah',
+                rasa: 'Manis',
+                getInfo: function() {
+                return 'Buah ' + this.nama + ' memiliki warna ' + this.warna + ' dan rasanya ' + this.rasa + '.';
+                }
+            };
+            
+            // Menampilkan informasi buah
+            console.log(buah.getInfo());
+            
+            // Mengubah warna buah
+            buah.warna = 'Hijau';
+    
+            // Menampilkan informasi buah setelah diubah warnanya
+            console.log(buah.getInfo());           
+
+        </script>
+
+    </body>
+</html>

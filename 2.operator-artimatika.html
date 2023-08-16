@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Operator Aritmatika</title>
+    </head>
+    <body>
+        <script>
+        let result = 23-2;
+        document.writeln("<p>23 - 2 = " +result+ "</p>");
+        let originalResult = result; // 3
+
+        result = result - 25; // -4
+        document.writeln("<p>" + originalResult + " - 25 = " + result + "</p>");
+        originalResult = result; //-4 disimpan di sini hasil yang sudah dihitunh
+
+        result *=2; //result * 2= -4
+        document.writeln("<p>" + originalResult + "* 2 = " + result + "</p>");
+        originalResult=result; //-8
+
+        result **=2; //result **2= -8*-8=64
+        document.writeln("<p>" + originalResult + "* 2 = " + result);
+        originalResult=result; //-8
+    </script>
+    </body>
+</html>

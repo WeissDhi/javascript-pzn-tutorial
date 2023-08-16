@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <title>Timer dengan Pilihan Suara</title> -->
+    </head>
+    <body>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+              }
+              
+              .container {
+                text-align: center;
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              }
+              
+              button {
+                margin-top: 10px;
+                padding: 8px 16px;
+                font-size: 16px;
+                border: none;
+                background-color: #007bff;
+                color: white;
+                border-radius: 4px;
+                cursor: pointer;
+              }
+              
+        </style>
+        <div class="container">
+            <h1>Timer dengan Pilihan Suara</h1>
+            <label for="minutes">Pilih durasi timer (menit):</label>
+            <input type="number" id="minutes" min="1" value="1">
+            <label for="sound">Pilih suara:</label>
+            <select id="sound">
+                <option value="suara1.mp3">Suara 1</option>
+                <option value="suara2.mp3">Suara 2</option>
+                <!-- Anda dapat menambahkan lebih banyak pilihan suara di sini -->
+            </select>
+            <button id="startButton">Mulai Timer</button>
+        </div>
+        <audio id="audio" src preload="auto"></audio>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const startButton = document.getElementById("startButton");
+                const minutesInput = document.getElementById("minutes");
+                const soundSelect = document.getElementById("sound");
+                const audio = document.getElementById("audio");
+              
+                let countdown;
+              
+                startButton.addEventListener("click", function () {
+                  const minutes = parseInt(minutesInput.value);
+                  const selectedSound = soundSelect.value;
+              
+                  if (!isNaN(minutes)) {
+                    const seconds = minutes * 60;
+                    startTimer(seconds, selectedSound);
+                  }
+                });
+              
+                function startTimer(seconds, sound) {
+                  clearInterval(countdown);
+              
+                  countdown = setInterval(function () {
+                    seconds--;
+              
+                    if (seconds <= 0) {
+                      clearInterval(countdown);
+                      playSound(sound);
+                    }
+                  }, 1000);
+                }
+              
+                function playSound(sound) {
+                  audio.src = sound;
+                  audio.play();
+                }
+              });
+              
+        </script>
+    </body>
+
+</html>

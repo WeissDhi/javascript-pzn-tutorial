@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Falsy dan Truthy</title>
+    </head>
+    <body>
+        <style>
+            body{
+                font-family: 'jetbrains mono';
+            }
+        p{
+         font-family: cursive;
+         text-align: justify;
+         font-size: 16px;
+        }
+        li{
+            margin: 4px;
+            font-size: 14px; 
+        }
+    </style>
+        <p>Di dalam JavaScript, nilai "falsy" merujuk pada nilai-nilai yang
+            dianggap sebagai "false" atau "tidak benar" ketika dievaluasi dalam
+            konteks kondisional, seperti pernyataan if atau while.</p>
+        <p>Falsy atau kadang ditulis falsey, adalah value yang ketika dalam
+            konteks boolean, dia dianggap false</p>
+        <p>berikut adalah list-list kata yang dianggap false pada falsy</p>
+        <ol>
+            <li>false: Boolean false</li>
+            <li>0: Angka nol dan -0</li>
+            <li>'' atau "": String kosong</li>
+            <li>null: Nilai null</li>
+            <li>undefined: Nilai yang tidak didefinisikan</li>
+            <li>NaN: Not-a-Number</li>
+        </ol>
+
+        <script>
+            //cara mengetes apakah falsy atau truthy
+            let data=null;
+
+            if(data){
+                alert('true'); //truthy
+
+            }else{
+                alert('false'); //falsy
+            }
+
+          
+            const value1 = "";
+
+            if (!value1) { //!=value1
+            alert("Value1 is falsy.");
+             }else{
+                ("value is truthy");
+             }
+
+
+              //contoh program menggunakan falshy truthy
+              const username = 14;
+              const password = '123oasdasdada';
+              if(password && username){
+                alert("Login succes!");
+              }
+              else{
+                alert("login failed, please try again!")
+              }
+        </script>
+
+    </body>
+</html>

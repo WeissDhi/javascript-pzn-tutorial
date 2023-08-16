@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNDIFINED TIPE DATA</title>
+</head>
+<body>
+    <script>
+        let test; //= 4; ini terdefine
+        if(test === undefined) {
+            alert('UNDIFINED');
+        }else{
+            alert('DEFINED');
+        }
+
+        //undifined di dalam array
+        const names = ["teuku", "fahri", "hasbi"];
+        if (names[2] === undefined) {
+            console.info('INI UNDIFINED');
+        }else{
+            console.info(`Defined namanya adalah ${names[2]}`);
+        }
+        //mendelete array
+        delete names[1];
+        console.info(names[1]);
+        console.table(names);
+
+        console.log(' ');
+        //undifined di dalam object
+        const orang = {
+         //   nama : "Ardhi",
+            kelas : "2IA28"
+        };
+        if (orang.nama === undefined){
+            console.info('UNDIFINED');
+        }else{
+            console.info(`DEFINED nama orangnya adalah ${orang.nama}`);
+        }
+        
+    </script>
+</body>
+</html>

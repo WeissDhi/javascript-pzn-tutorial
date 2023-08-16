@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+</head>
+<body>
+    <style>
+        p{
+            text-align: center;
+            font-family: monospace;
+            font-size: 24px;
+        }
+    </style>
+    <script>
+    document.writeln(`<p>Alert digunakan untuk memberi peringatan berupa popup text di browser</p>`) ;
+    document.writeln(`<p>Prompt digunakan untuk mendapatkan input String dari user</p>`) ;
+    document.writeln(`<p>Confirm digunakan untuk mendapatkan input boolean dari user</p>`) ;
+
+    alert("hello world! ini adalah alert") ;
+
+    const name =  prompt("Masukkan nama Anda");
+    alert(`Hello, ${name}`);
+
+    const login = confirm("Apakah anda ingin login");
+    if (login){
+        const password = prompt("Masukkan pasword anda");
+        alert("anda berhasil masuk");
+        
+    } else {
+        alert("Anda tidak login, sampai bertemu nanti");
+    }
+    </script>
+
+    
+</body>
+</html>

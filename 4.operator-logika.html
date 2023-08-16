@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.writeln(`<p>Ini adalah operator logika <br>
+            && ini adalah operator AND true and true bernial true <br>
+            || ini adalah ooperator OR true and false bernilai true <br>
+            ! ini adalah operator unery !false = true , !true = false <br>
+        </p>`);
+
+        let nilaiUjian = 74;
+        let nilaiTugas =89;
+
+        let lulusUjian = nilaiTugas >75;
+        document.writeln(lulusUjian);
+        let lulusTugas = nilaiTugas >80;
+        document.writeln(lulusTugas);
+
+        const lulus = lulusUjian & lulusTugas;
+        document.writeln("<p> Apakah Mahasiswa ini lulus? = "+lulus)
+    </script>
+</body>
+</html>
