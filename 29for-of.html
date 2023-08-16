@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>For of</title>
+    </head>
+    <body>
+        <p>For of melakukan iterasi terhadap isi value dari iterable object
+            seperti array string dll</p>
+        <p>For of tidak bisa digunakan untuk melakukan iterasi data di object,
+            karena object bukanlah
+            iterable.</p>
+
+            <script>
+                //arrray
+                const names =["Teuku", "Firman", "Alyaa", "Ardhi", "Eros"]
+                for (const valuenya of names){
+                    document.writeln(`<p>valuenya ${valuenya}</p>`); //ga bisa mencetak index array
+                }
+
+                //string
+                const text = "17 Agustus tahun 45 itulah hari kemerdekaan kita";
+                for (const characternya of text){
+                    document.writeln(`<p>${characternya}</p>`);
+                }
+
+                //error karena object bukan iterable
+                const orang ={
+                    nama :"Teuku",
+                    kelas : "2IA28",
+                    npm : 51421472
+                }
+                for(const value of orang){
+                    document.writeln(`<p>valuenya ${value}</p>`);
+                }
+
+
+            </script>
+    </body>
+</html>

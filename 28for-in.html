@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for in</title>
+</head>
+<body>
+    <p>for in dipakai kebanyakan pada object</p>
+    <p>karena orang lebih pengen tau property dari object daripada index dari array yang pasti dimulai dari 0 sampai panjang array -1</p>
+    <script>
+        //digunakan untuk melihat nama property pada object
+        let person = {
+            name : "Teuku Ardhi",
+            age : 21,
+            addres : "Indonesia"
+        };
+        //mengecek nama property pada object
+        for(const propertynya in person){
+            document.writeln(`<p>${propertynya} : ${person[propertynya]}</p>`);
+        }
+
+        //digunakan untuk melihat index pada array
+        const names =["Teuku", "Firman", "Alyaa", "Ardhi", "Eros"]
+        for (const indexnya in names){
+            document.writeln(`<p>index ke-${indexnya} : ${names[indexnya]}</p>`);
+        }
+    </script>
+</body>
+</html>
