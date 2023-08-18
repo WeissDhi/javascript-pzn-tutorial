@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rest Parameter</title>
+    </head>
+    <body>
+        <style>
+            li{
+                font-family: 'Jetbrains-mono';
+                font-size: 24px;
+                margin: 12px;
+            }
+            h1{
+                padding-left: 24px;
+            }
+            pre{
+                color:rgb(92, 107, 107);
+                font-size: 24px;
+            }
+            p{
+                font-size: 24px;
+                margin-left: 24px;
+            }
+        </style>
+        <h1>Rest Parameters</h1>
+        <ul>
+            <li>Rest Parameter adalah fitur dimana kita bisa mengirim data
+                sebanyak-banyak nya pada satu
+                parameter, dan secara otomatis akan di konversi menjadi Array</li>
+            <li>Rest parameter hanya boleh ada satu di function, tidak boleh
+                lebih dari satu</li>
+            <li>Rest parameter hanya boleh berada di posisi paling akhir, tidak
+                boleh di depan atau di tengah,
+                kecuali memang cuma ada 1 parameter</li>
+        </ul>
+        <p>syntaxnya: </p>
+        <pre>
+        function contoh(par1, par2, ...sisanya) {
+            console.log(par1);        // Parameter pertama
+            console.log(par2);        // Parameter kedua
+            console.log(sisanya);     // Sisa argumen dalam bentuk array
+          }
+          
+          contoh('a', 'b', 'c', 'd', 'e');
+          // Output:
+          // a
+          // b
+          // [ 'c', 'd', 'e' ]</pre>
+
+        <script>
+            //contoh rest parameter
+            // Mendefinisikan fungsi bernama "sum" dengan rest parameter.
+            function sum(name, ...data) {
+                let total = 0; // Membuat variabel untuk menyimpan total.
+                
+                // Melakukan perulangan melalui semua elemen dalam "data" (argumen selain "name").
+                for (const item of data) {
+                    total += item; // Menambahkan setiap elemen ke total.
+                }
+
+                // Menampilkan hasil ke dalam dokumen HTML.
+                document.writeln(`<p>Total ${name} Adalah ${total}</p>`);
+            }
+
+            // Memanggil fungsi "sum" dengan beberapa argumen.
+            sum('Mangga', 10, 24, 53, 23, 42);
+            sum('Apel', 10, 20, 30, 40, 50);
+            sum('Melon', 10, 100, 123, 214);
+
+            document.writeln(`<p>kalau sudah memiliki data berupa array dan ingin memasukkkannya ke dalam rest parameter kita bisa menggunakan ... (titik 3)</p>`)
+            
+            //meiliki data array:
+            const value = [13,24,124,412,4];
+            sum ("Delima", ...value); //menggunakan ... spread syntax
+
+            //arguments parameter:
+            function oldSum(){
+                let jumlah = 0;
+                for (const argument of arguments) {
+                    jumlah += argument;
+                }
+                document.writeln(`<p>Total is ${jumlah}</p>`);
+            }
+        
+            oldSum(1,2,3,4,5);
+        
+            
+        </script>
+    </body>
+</html>

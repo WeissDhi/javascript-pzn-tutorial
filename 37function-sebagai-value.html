@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rest Parameter</title>
+    </head>
+<body>
+    <p>function pada javascript bisa digunakan sebagai value</p>
+    <p>bisa disimpan ke dalam variabel</p>
+    <p>bisa dikirim ke parameter fungsi lainnya</p>
+    <script>
+        //function di variable
+        function sayHello(name, ){
+            document.writeln(`<p>Hello ${name}</p>`);
+        }
+        sayHello("Firman")//memanggil biasa
+
+        const say = sayHello; //menjadikan fungsi sebagai value dari variable say (otomatis variable say jadi fungsi)
+        say("Teuku Ardhi");// memanggil fungsi dari
+
+        //function di parameter
+        function giveMeName(callback){
+            callback("Johno iskandar");//menjadikan parameter sebagai fungsi
+        }
+        giveMeName(sayHello);
+        giveMeName(say);
+        giveMeName(callback);
+
+    </script>
+</body>
+</html>

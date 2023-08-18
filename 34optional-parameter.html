@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Parameter</title>
+</head>
+<body>
+    <p>secara default, javascript tidak, parameter di js itu opsional / tidak wajib mengisi value ketika dipanggil</p>
+    <script>
+        //deeclare function
+        function names(firstName, middleName, lastName){
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+        names();
+        names(12);
+        names("Teuku");
+        names("Teuku","Ardhi");
+        names("Teuku", "Ardhi", "Firmansyah", "Al Ghozali");// tetep yang keluar mah cuma 3
+    </script>
+</body>
+</html>

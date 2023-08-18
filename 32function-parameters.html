@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Parameter</title>
+</head>
+<body>
+    <script>
+        //membuat function parameter
+        function sayHelloWorld(firstName, lastName){
+            document.writeln(`<p>Hello world! ${firstName} ${lastName}</p>`);
+        }
+        //memanggil function dan mengisi parameternya
+        sayHelloWorld("Teuku", "Ardhi");
+        sayHelloWorld("Alyaa", "Aliifah");
+
+        //membuat function penjumlahan
+        function add(firstNum, lastNum){
+            const result = firstNum + lastNum;
+            document.writeln(`<p>the result is ${result}</p>`);
+        }
+        add(12, 14);
+    </script>
+</body>
+</html>

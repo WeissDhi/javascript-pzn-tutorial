@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymouse Function</title>
+</head>
+<body>
+    <script>
+        //membuat function anonimus yang dimasukkan ke variable
+
+        const say = function(name) {
+            document.writeln(`<p>Hello ${name}!</p>`);
+        }
+        say("Ardhi")
+
+        //membuat function anonimus di parameter
+        function giveMeName(callback) {
+            callback("Teuku");//callback menjadi fungsi
+        }
+
+        giveMeName(say);
+
+        //alternative dari membuat function di variable
+        giveMeName(function(name) {
+            document.writeln(`<p>Hi ${name}`);
+        }, /*next parameter diisi fungsi(){} lagi di sini*/);
+
+        //contoh lain
+
+        // Fungsi anonim sebagai argumen untuk setTimeout
+        setTimeout(function() {
+            alert("Pesan ini akan muncul setelah 5 detik.");
+          }, 5000);
+        
+        const numbers = [2, 5, 4, 8];
+        
+        numbers.forEach(function(number){
+            console.info(number*2);
+        });
+    </script>
+</body>
+</html>

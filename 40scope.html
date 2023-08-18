@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scope</title>
+    </head>
+    <body>
+        <p>SCOPE adalah area akses sebuah data</p>
+        <p>local SCOPE bisa akses global, tapi global SCOPE tidak bisa akses lokal</p>
+        <script>
+            //global scope variable
+            let counter = 0;
+
+            //global scope function
+            function hitMe(){
+                //local scope hit me
+            counter++;
+            }
+            
+            hitMe();
+            hitMe();
+            console.info(counter);
+
+            function first(){
+                //local scope first
+                let firstVariable = "Hello first";
+
+                function firstNestedVariable(){
+                    //local scope
+                    console.info(firstVariable); //ini bisa diakses karena local bisa akses global, tapi global tidak bisa akses lokal
+                    console.info("Hello Nested")
+                    let number = 13; 
+                }
+                console.info(firstNestedVariable); 
+                console.info(number);//ini ga bisa karena number berada di lokal
+
+            }
+
+            function second(){
+            //local scope second
+                let secondVariable = "Hello second";
+
+            }
+
+            //membuat variable global scope function
+            first();
+            second();
+
+            //memanggil local scope dari luar
+            //console.info(firstVariable); ERROR can not access first variable
+            //console.info(secondVariable); ERROR can not access second variable
+
+
+    </script>
+    </body>
+</html>

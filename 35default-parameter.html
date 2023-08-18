@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>default parameter</title>
+</head>
+<body>
+    <script>
+        //membuat default parameter gender
+        function register (name, gender="Unknown", age) {
+            console.log(`
+                ${name}
+                ${gender}
+                ${age}
+            `);
+        }
+        register()
+        register("Teuku", "Male")//default parameter berganti jadi Male
+        register("Teuku", "Male", 17)
+    </script>
+
+</body>
+</html>

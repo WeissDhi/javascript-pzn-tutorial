@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Function</title>
+</head>
+<body>
+    <p>inner function hanya bisa diakses dari dalam fungsi yang membungkusnya saja tidak bisa dari luar</p>
+    <script>
+    function outter(){
+        function inner(){
+            document.writeln(`<p> Ini Inner function`);
+        }
+        inner();
+
+    };
+    outter();
+    inner(); //errror cannot get inner function
+    </script>
+</body>
+</html>

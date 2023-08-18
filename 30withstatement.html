@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //penggunaan ini mempermudah untuk mengecilkan scope
+        const person = { 
+            firstName: "Teuku",
+            middleName: "Ardhi",
+            lastName: "Firmansyah"
+        };
+    
+        console.info(person.firstName);//scope ini ribet tapi detail
+        console.info(person.middleName);
+        console.info(person.lastName);
+    
+        const firstName = "Budi";
+        const lastName = "Nugraha";
+    
+        with (person) {
+            console.info(firstName); //ini mudah namun bisa menghasilkan ambigu
+            console.info(middleName);
+            console.info(lastName);
+        }
+    
+    </script>
+</body>
+</html>

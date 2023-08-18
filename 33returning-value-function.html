@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Returning Function</title>
+    </head>
+    <body>
+        <script>
+        //membuat function return value
+        function sayHello(firstName, lastName){
+            const say = `Hello ${firstName} ${lastName}`;
+            return say; //mengembalikan data hello firstname lastname
+        }
+        //memanggil fungsi dan menangkap return valuenya
+        const result = sayHello('Teuku', 'Ardhi'); //fungsinya disimpan dalam variable
+        document.writeln(`<p>${result}</p>`);
+
+        //mengembalikan value sesuai yang kita mau
+        function nilaiAkhir (value){
+            if(value >=90 && value <=100){
+                return "A";
+            }else if(value>80){
+                return "B";
+            }else if (value >70){
+                return "C";
+            }else if (value >60){
+                return "D";
+            }else if (value > 1 && value <=60){
+                return "E";
+            }else {
+                return "Not a Valid Value";
+            }
+        }
+        const nilai = nilaiAkhir(95);
+        document.writeln(`<p> Nilai anda adalah ${nilai}`);
+
+        //menghitung luas segitiga
+        function luasSegitiga(alas, tinggi) {
+            const luas = (alas * tinggi) * 0.5;
+            return document.writeln(`<p> luas segitiga adalah ${luas}`);
+        }
+        //memanggil fungsi
+        luasSegitiga(12,5);
+
+
+        // Fungsi untuk mengecek apakah nilai tertentu ada dalam array
+        function isContains(array, searchValue) {
+            // Melakukan perulangan untuk setiap elemen dalam array
+            for (const element of array) {
+                console.info(`Iterasi elemen ${element}`);
+                
+                // Memeriksa apakah elemen saat ini sama dengan nilai yang dicari
+                if (element === searchValue) {
+                    return true; // Mengembalikan true jika ditemukan nilai yang sama
+                }
+            }
+            
+            // Mengembalikan false jika tidak ditemukan nilai yang sama di seluruh elemen array
+            return false;
+        }
+
+        // Membuat array
+        const arraynya = [124, 24, 2, 51, "teuku", 12.5];
+
+        // Nilai yang ingin dicari dalam array
+        const cari = "Ardhi";
+
+        // Memanggil fungsi isContains dengan arraynya dan nilai yang ingin dicari
+        const found = isContains(arraynya, cari);
+
+        // Menampilkan hasil
+        document.writeln(`<p>Apakah ada elemen ${cari} dalam array? : ${found}`);
+
+
+        //mencari properti pada object
+        function isPropertyInObject(obj, searchProperty) {
+            for (const key in obj) {
+                console.info(`Iterasi properti ${key}`);
+                if (key === searchProperty) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        const objek = {
+            nama: "Ardhi",
+            usia: 30,
+            pekerjaan: "Developer",
+            hobi : "Bermain billiard"
+        };
+        
+        const search = "hobi";
+        const menemukan = isPropertyInObject(objek, search);
+        
+        document.writeln(`<p>Apakah ada properti ${search} dalam objek? : ${menemukan}</p>`);
+
+
+
+
+        //mencari value pada object
+        function isPropertyExists(obj, searchValue) {
+            for (const key in obj) {
+                console.info(`Iterasi properti ${key}`);
+                if (obj[key] === searchValue) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        const object = {
+            nama: "Ardhi",
+            usia: 30,
+            pekerjaan: "Developer"
+        };
+        
+        const mencari = "Developer";
+        
+        const ditemukan = isPropertyExists(object, mencari);
+        
+        document.writeln(`<p>Apakah ada properti dengan nilai ${mencari} dalam objek? : ${ditemukan}</p>`);
+        
+        
+    </script>
+    </body>
+</html>
