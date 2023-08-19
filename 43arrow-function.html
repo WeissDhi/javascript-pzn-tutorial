@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+        //arrow function s
+        const sayHello = (name) =>{
+        const say = `Hello ${name}!`;
+        console.info(say);
+        }
+        sayHello("Ardhi")
+
+        //Arrow Function Tanpa Block
+        const sayHi = name => console.info(`Hi ${name}!`); //kalo cuma 1 parameter tidak perlu tanda kurung parameter kecuali lebih dari dua (name, umur, tahun)
+        sayHi("Alyaa");
+
+        //Arrow Function Return Value
+
+        //cara biasa (menuliskan returnnya)
+        const add = (firstNumber, secondNumber)=>{
+        return firstNumber + secondNumber;
+        }
+        console.info(add(122,122)); 
+
+        //cara simple cuma 1 baris
+        const subs = (first, second) => first+second;
+        console.info(subs(122,122));
+
+        //Arrow function sebagai parameter (mirip dengan anonymous)
+        
+        //declare function 
+        function giveMeName(callback){
+        callback("Function");
+        }
+        //anonymous function sebagai parameter
+       //memanggil fungsi giveMeName nya 
+        giveMeName(function(nama){ //parameternya function(nama)
+            console.info(`Hello ${nama}`)
+        });
+
+        //contoh pake arrow function sebagai parameter
+        giveMeName(namaSaya => console.info(`Hello ${namaSaya}`)); //hasilnya samaz`
+
+    </script>
+</body>
+</html>
