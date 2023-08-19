@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Function Generator</title>
+    </head>
+    <body>
+        <h1>Function Generator</h1>
+        <ul>
+            <li>Function generator adalah function yang digunakan untuk membuat
+                data generator</li>
+            <li>Generator adalah data yang bisa di interasi seperti Array</li>
+            <li>Untuk membuat function generator, kita perlu menggunakan tanda *
+                (bintang) setelah kata
+                function</li>
+            <li> Dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan
+                kata kunci yield diikuti datanya </li>
+
+        <script>
+            //membuat function generator sederhana
+            function* createNames(){
+                yield "Ardhi";
+                yield "Teuku";
+                yield 2;
+                yield "Senpay 123"
+            }
+            //function generator tidak bisa dipanggil (diakses berupa index, tidak bisa diubah tipedata) hanay bisa diiterasi
+            const names = createNames();
+            for (const name of names){ //cuma bisa diiterasi
+                console.log(name);
+            }
+            
+
+            //lebih komplex
+
+            //lazy function
+            function* buatGanjil(value){
+                
+                for(let i=1;i<=value;i++){
+                    if(i % 2 === 1){
+                        yield i;
+                    }
+                }
+            }
+            // eager
+
+            function buatGanjilArray(value) {
+                const result = []
+                for (let i = 1; i <= value; i++) {
+                    if (i % 2 === 1) {
+                        console.info(`Yield ${i}`);
+                        result.push(i);
+                    }
+                }
+                return result;
+            }
+
+            const numbers = buatGanjil(100);
+            // for (const number of numbers) {
+            //     console.info(number);
+            // }
+
+            //dipanggil sekali sekali doang ga di iterasi sampai 100
+            console.info(numbers.next().value);
+            console.info(numbers.next().value);
+            console.info(numbers.next().value);
+            
+        </script>
+    </body>
+</html>
