@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Destructuring</title>
+    </head>
+    <body>
+        <style>
+            h1 { 
+                font-size:24px;
+                font-weight: bold;
+                margin-left: 24px;
+            }
+            li{
+                font-size: 12px;
+                text-align: justify;
+                font-family: Jetbrains Mono;
+                padding-right : 200px;
+                margin-right: 200px
+            }
+            
+        </style>
+        <h1>
+            Destructuring
+        </h1>
+        <ul>
+            <li>Destructuring adalah fitur yang bisa digunakan untuk membongkar
+                value-value di array atau
+                object ke dalam variable-variable</li>
+            <li>Fitur ini sangat mempermudah kita ketika ingin mengambil data
+                dari array atau object tanpa harus
+                melakukan pengambilan data satu persatu</li>
+        </ul>
+        <h1>
+            Destructuring Function Parameter
+        </h1>
+        <ul>
+            <li>Destructuring tidak hanya bisa dilakukan di variable, tapi juga
+                bisa dilakukan di function parameter</li>
+            <li>Hal ini membuat kita mudah ketika ingin mengambil nested data
+                dalam array atau object dalam
+                function</li>
+        </ul>
+        <h1>
+            Default Value
+        </h1>
+        <ul>
+            <li>Yang paling menarik di destructuring adalah, kita bisa
+                menambahkan default value
+            </li>
+            <li>Jadi misal kita kita melakukan destructuring terhadap array,
+                ternyata tidak ada datanya, maka kita
+                bisa menambahkan default value
+            </li>
+            <li>Begitu juga pada object, jika ternyata property nya tidak ada,
+                maka kita bisa menambahkan default
+                valuen</li>
+        </ul>
+        <h1>
+            Menggunakan Nama Variable Lain pada object
+        </h1>
+        <ul>
+            <li>Saat melakukan destructuring di Array, kita bisa dengan mudah
+                membuat nama variable sesuka
+                kita
+            </li>
+            <li>Namun pada saat melakukan destructuring, kita harus membuat nama
+                variable sama dengan nama
+                property
+            </li>
+            <li>Kita juga bisa menggunakan nama variable lain saat melakukan
+                destructuring object jika kita mau</li>
+        </ul>
+        <script>
+            { //mengambil data di array manual
+                const name = ["Teuku", "Ardhi", "Eko", "Daffar", "Nopri", "Darmawan"];
+                const firstName  = name[1];
+                const middleName = name[2];
+                const lastName = name[3]; //cape satu satu
+
+                console.info(firstName);
+                console.info(middleName);
+                console.info(lastName);
+            }
+            console.warn(" THIS IS SPACE")
+
+            { //mengambil data di array menggunakan destructuring
+                const names = ["Teuku", "Ardhi", "Eko", "Daffar", "Nopri", "Darmawan"];
+
+                const [firstName, middleName, lastName, ...otherNames] = names;
+                console.info(firstName);
+                console.info(middleName);
+                console.info(lastName);
+                console.info(otherNames);//sisanya bakal keluar dalam bentuk array
+                console.table(otherNames);//
+            }
+            console.warn(" THIS IS SPACE")
+
+            {//destructuring data di object
+                const mahasiswa ={
+                nama: "Teuku Ardhi",
+                skills : {
+                    programming : "Website, Desktop, Mobile",
+                    softskill : "Komunikasi, Kerja Cepat, Ulen "
+                },
+                kelas : "2IA28",
+                npm : 51421472,
+                jurusan : "Teknik Informatika",
+                universitas : "Gunadarma"
+
+                }
+                //mengambil data manual
+                console.info(mahasiswa.nama);
+                console.info(mahasiswa.jurusan);
+                console.info(mahasiswa.kelas);
+
+                console.warn(" ")
+
+                //menggunakan destructuring(nama variable harus sama dengan nama object yang akan dipanggil ga bisa beda)
+                const {nama, skills, kelas, ...otherData} = mahasiswa;
+                console.info(nama);
+                console.info(skills);
+                console.info(kelas);
+                console.info(otherData); //bentuknya bakal object juga sisanya
+            }
+            console.warn(" THIS IS SPACE")
+
+            {//Destructuring pada Nested Object
+                const mahasiswa ={
+                    nama: "Teuku Ardhi",
+                    skills : {
+                        programming : "Website, Desktop, Mobile",
+                        softskill : "Komunikasi, Kerja Cepat, Ulen "
+                    },
+                    kelas : "2IA28",
+                    npm : 51421472,
+                    jurusan : "Teknik Informatika",
+                    universitas : "Gunadarma"
+                    }
+                    const {nama, skills: {programming, softskill}, kelas, ...otherData} = mahasiswa;
+                    console.info(nama);
+                    //console.info(skills); ini udah g bisa diakses karena dah ada variable programmiing dan juga softwskills
+                    console.info(programming);
+                    console.info(softskill);
+                    console.info(kelas);
+                    console.info(otherData);
+                    
+            }
+            console.warn(" THIS IS SPACE")
+
+            {   //destructure function pada function
+
+                //object
+                function displayPerson({firstName, middleName, lastName}) { //langsung dibuat aja parameter obejct di sini
+                    console.info(firstName); //daripada gunain console.info(person.firstName); 
+                    console.info(middleName);
+                    console.info(lastName);
+                }
+        
+                const person = {
+                    firstName: "Teuku",
+                    middleName: "Ardhi",
+                    lastName: "Firmansyah",
+                };
+                displayPerson(person);
+                console.warn(" ")
+                
+                //arrary
+                function add([num1,num2]){
+                return num1+num2; //jadi g usah return num[0]+num[1]
+                }
+                console.info(add([1,1]));
+                console.info(add([10,10]));
+            } 
+
+            console.warn(" THIS IS SPACE")
+
+
+            {//default value in array
+                const names = ["Teuku", "Ardhi", ];
+                const [firstName,middleName, lastName = "Firmansyah"] = names;
+                console.info(firstName);
+                console.info(middleName);
+                console.info(lastName); //the default value will comes up
+            }
+
+            console.warn(" THIS IS SPACE")
+
+            { //default value di object   
+                const person = {
+                    firstName: "Eko",
+                    lastName: "Alyaa"
+                };
+            
+                let {firstName, middleName = "Patrio", lastName} = person;
+                console.info(firstName);
+                console.info(middleName);
+                console.info(lastName); 
+            }
+            
+
+
+            {//Menggunakan Nama Variable Lain pada object
+                const mahasiswa ={
+                    nama: "Teuku Ardhi",
+                    skills : {
+                        programming : "Website, Desktop, Mobile",
+                        softskill : "Komunikasi, Kerja Cepat, Ulen "
+                    },
+                    kelas : "2IA28",
+                    npm : 51421472,
+                    jurusan : "Teknik Informatika",
+                    universitas : "Gunadarma"
+    
+                    }
+                    //mengambil data manual
+                    console.info(mahasiswa.nama);
+                    console.info(mahasiswa.jurusan);
+                    console.info(mahasiswa.kelas);
+    
+                    console.warn(" ")
+    
+                    //menggunakan destructuring(nama variable sekarang bisa beda dengan nama object yang akan dipanggil)
+                    const {
+                        nama : name, 
+                        skills : keahlian, 
+                        kelas : classBanget,
+                        hobi = "Berenang", //setting default value jg bisa
+                        ...otherData} = mahasiswa;
+                    console.info(name);
+                    console.info(keahlian);
+                    console.info(classBanget);
+                    console.info(hobi);
+                    console.info(otherData); //bentuknya bakal object juga sisanya
+                }
+        </script>
+
+    </body>
+</html>

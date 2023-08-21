@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata kunci Var problems</title>
+</head>
+<ul>
+    <li>Alasan var tidak direkomendasikan digunakan lagi adalah, karena var tidak memiliki block scope,
+        artinya dia tidak mengikat ke local scope</li>
+    <li>
+        Karena masalah ini, var bisa tidak terprediksi
+    </li></ul>
+    <script>
+        //membuat dengan let
+        let i = 20;
+        for(let i = 0; i <10; i++) {
+            console.info(`local ${i}`);
+        }
+        console.info(`global ${i}`);  //tidak akan terjadi masalah dan yang scope global akan tetap tercetak
+
+        function local(){
+            let i= 99;
+            console.log(`function ${i}`);
+        }
+        local(); //mengakses i di dalam fungsi dan tidak berubah
+
+        //jika menggunakann var
+
+        var j =20
+
+        for(var j=0; j <10; j++){
+            console.info(`localnya ${j}`);
+        }
+        console.info(`globalnya ${j}`); //globalnya bakal ngikut ke local yang sampai 10 sehingga mengubah 
+    </script>
+</body>
+</html>

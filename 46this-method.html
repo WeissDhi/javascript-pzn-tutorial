@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+<body>
+    <h1>Kata Kunci This</h1>
+    <ul>
+        <li>Kata kunci this adalah referensi ke object milik siapa</li>
+        <li>Tiap lokasi kata kunci this, bisa berbeda-beda referensi pemilik nya (inner, global, object)</li>
+        <li>Dalam Object Method, this merupakan referensi ke object pemilik function nya</li>
+        <li>Di global scope dan function, this merupakan referensi ke global object (di browser biasanya Window)
+        </li>
+    </ul>
+    <script>
+        console.info(this); //milik window
+
+        function outter(){
+            console.info(this);
+            function inner(){
+                console.info(this); 
+            }
+            inner();
+        }
+        outter(); 
+
+        //kalau di dalam object dia bukan punya window
+        const person ={
+            name : "Ardhi",
+            sayHello: function(value){
+             alert (`hello ${value}, aku ${this.name}`); //this di sini buat akses variable name
+            }
+        }
+        person.sayHello("Budi");
+        person.sayHello("Ulfie");
+        person.sayHello("Braja");
+
+        //contoh lain this
+        const personal ={
+         orang : "Aing ti Bandung",
+         ngomong (){
+            console.info(this);
+            alert(`Hi Semua ${this.orang}`);
+            }
+        }
+        
+        pesonal.sapa();
+        //ngebuat variable baru trus ngambil nilainya dari fungsi ngomong
+        const greet = personal.ngomong();
+       
+
+    </script>
+</body>
+</html>

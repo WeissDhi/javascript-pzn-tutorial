@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow function pada object</title>
+</head>
+<body>
+    <h1>Function Arrow pada object :</h1>
+    <ul>
+        <li>Arrow Function juga bisa kita gunakan di sebagai Object Method
+        </li>
+        <li>Namun perlu diketahui, Arrow Function tidak bisa digunakan untuk mengakses arguments object,
+            function generator, kata kunci this dan kata kunci super (dibahas di materi JavaScript Object
+            Oriented Programming)
+            </li>
+        <li>Jadi pastikan gunakan Arrow Function hanya memang ketika kita tidak butuh fitur-fitur diatas</li>
+    </ul>
+    <script>
+        const person ={
+            name : "Ardhi",
+            sayHello: value =>{
+                alert (`hello ${value}, aku ${this.name}`); //this di sini bakalan undefine karna thisnya ke window
+            } //this di sini pasti
+        }
+        person.sayHello("Budi"); //undefine 
+
+    
+    </script>
+</body>
+</html>

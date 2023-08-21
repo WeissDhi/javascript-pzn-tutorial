@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sctrict</title>
+    </head>
+    <body>
+        <style>
+            body{
+            text-decoration: none;
+            }
+        </style>
+        <h1>
+            Destructuring Function Parameter
+        </h1>
+        <ul>
+            <li>Saat kita menjalankan kode program JavaScript, secara default
+                kode program kita berjalan dalam mode tidak strict, atau
+                istilahnya sloppy mode</li>
+            <li>Pada ECMAScript 5, diperkenalkan mode strict, dimana ketika
+                strict mode dijalankan, maka akan merubah beberapa cara kerja di
+                JavaScript, seperti :
+                <ul>
+                <li>Merubah beberapa JavaScript error dari yang tadinya silent
+                    error, menjadi throw error (terlihat)</li>
+                <li>Memperbaiki beberapa kesalahan engine JavaScript untuk
+                    optimisasi</li>
+                <li>Menolak beberapa kode perintah yang kedepannya akan
+                    digunakan di ECMAScript
+                </li>
+                </ul>
+            </li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#syntax_errors">Link Syntax Strict Mode</a></li>
+        </ul>
+        <script>
+            function useStrictMode() {
+            'use strict';
+                const person = {
+                    firstName: `Ardhi`
+                };
+
+                with(person){//not allowed in strict mode (ERROR)
+                console.log(firstName);
+                }
+            }
+        </script>
+    </body>
+</html>
