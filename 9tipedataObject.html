@@ -15,9 +15,10 @@
             kosong ["data3"] = "Hello World !";
             console.table(kosong);
 
+
             //membuat object baru (create)
             console.info(' ');
-            console.info('Create');
+            console.warn('Create');
             const orang = {
                 Nama : "Teuku Ardhi",
                 alamat : "Jakarta",
@@ -26,37 +27,42 @@
             }
             console.table(orang);
 
-
-            //membaca data (read)
+            
+           { //membaca data (read)
             console.info(' ');
-            console.info('Read');
+            console.warn('Read');               //nama object.propertiesnya
             console.info(`Nama orangnya adalah ${orang.Nama}`);
             console.info(`Alamat orangnya adalah ${orang.alamat}`);
             console.info(`Umur orangnya adalah ${orang["umur"]} tahun`);//yang tidak memakai titik
             console.info('alamat emailnya:'+orang["alamat email"]);
-            console.info(' ');
+            console.info(' ');}
 
 
-            //mengubah property atau attribute (update)
+           { //mengubah property atau attribute (update)
             orang["alamat email"] = 'teukuardhi228@gmail.com';
             orang.alamat = "Tangerang";
             orang["Nama"] = "Firmansyah Al Ghozali";
-            console.info('Update');
+            console.warn('Update');
             console.table(orang);
             console.info(' ');
+           }
 
-            //menghapus property atau attribute (delete)
-            console.info('delete');
+            {//menghapus property atau attribute (delete)
+            console.warn('delete');
             delete orang.alamat;
             delete orang['alamat email'];
             console.table(orang);
             console.info(' ');
+            }
 
+            {
             //update lagi
             console.info('Update lagi');
-            orang.alamat = "Bandung";
+            //ganti jadi kelurahan bukan alamat
+            orang.kelurahan = "Setiabudi";
             orang['alamat email'] = "cheaterbanned@gmail.com";
             console.table(orang);
+            }
 
             // Membuat objek buah-buahan
             var buah = {

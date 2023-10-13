@@ -57,7 +57,8 @@
         <script>
                 const person = {
                     address: {
-                        country : "Indonesia"
+                        country : "Indonesia",
+                        city : "Jakarta"
                     }
                 };
             
@@ -72,6 +73,8 @@
                 document.writeln(`<p>${country}</p>`);
             
                 document.writeln(`SUKSES`);
+                
+                document.writeln(`<p>${person?.addres?.street}</p>`)
             
             </script>
     </body>

@@ -26,7 +26,18 @@
             console.info(middleName);
             console.info(lastName);
         }
-    
+        
+        const mahasiswa ={
+            name : "Teuku Ardhi",
+            kelas : "2IA28",
+            npm: 51421472
+        }
+        with(mahasiswa) {
+            console.info(name); //ini mudah namun bisa menghasilkan ambigu
+            console.info(kelas);
+            console.info(npm);
+        }
+        
     </script>
 </body>
 </html>

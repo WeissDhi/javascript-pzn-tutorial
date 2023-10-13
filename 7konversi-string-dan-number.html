@@ -47,43 +47,43 @@
         </table>
 
         <script>
-            const nilai1 = '1';//1
-            const nilai2 = 2;
-            document.writeln(`<p> total nilai  adalah ${nilai1+nilai2}</p>`);//belum dikonversi sehinggal 1+'2' =12
+                const nilai1 = '1';//1
+                const nilai2 = 2;
+                document.writeln(`<p> total nilai  adalah ${nilai1+nilai2}</p>`);//belum dikonversi sehinggal 1+'2' =12
 
-            document.write(`<p>${parseInt('1.9')} </p>`); //to int jadi tidak menghiraukan angka dibelakang koma
-            document.write(`<p>${parseFloat('2.7')} </p>`); //to float jadi bilangan pecahan
-            document.writeln(`<p>${Number('2.2341')} </p>`); //flexible bisa int bisa float
+                document.write(`<p>${parseInt('1.9')} </p>`); //to int jadi tidak menghiraukan angka dibelakang koma
+                document.write(`<p>${parseFloat('2.7')} </p>`); //to float jadi bilangan pecahan
+                document.writeln(`<p>${Number('2.2341')} </p>`); //flexible bisa int bisa float
 
-            //pengoprasian menggunakan to string
-            const a=1;
-            const b = 39;
-            const total = a.toString() + b.toString(); //139
-            document.writeln(`<p> ${total} </p>`);
+                //pengoprasian menggunakan to string
+                const a=1;
+                const b = 39;
+                const total = a.toString() + b.toString(); //139
+                document.writeln(`<p> ${total} </p>`); //jadi string
 
-            //NaN (not a number)
+                //NaN (not a number)
 
-            //jika memakai parseInt dan parseFloat masih ada toleransi
-            document.writeln(`<p>${parseInt('138asep')} </p>`)//ignore huruf atau kata
-            document.writeln(`<p>${parseFloat('12.8asep')} </p>`)
-            document.writeln(`<p>${parseInt('a138asep')} </p>`) //jika kata di depan maka akan menghasilkan NaN
+                //jika memakai parseInt dan parseFloat masih ada toleransi
+                document.writeln(`<p>${parseInt('138asep')} </p>`)//ignore huruf atau kata
+                document.writeln(`<p>${parseFloat('12.8asep')} </p>`)
+                document.writeln(`<p>${parseInt('a138asep')} </p>`) //jika kata di depan maka akan menghasilkan NaN
 
-            //jika memakai number maka tidak ada toleransi satu huruf pun
-            document.writeln(`<p>${Number('138asep')} </p>`) //NaN
-            document.writeln(`<p>${Number('12.8asep')} </p>`)//NaN
-            document.writeln(`<p>${Number('12')} </p>`)//12
+                //jika memakai number maka tidak ada toleransi satu huruf pun
+                document.writeln(`<p>${Number('138asep')} </p>`) //NaN
+                document.writeln(`<p>${Number('12.8asep')} </p>`)//NaN
+                document.writeln(`<p>${Number('12')} </p>`)//12
 
-            //mengoperasikan nilai NaN
-            const first = Number("salah"); // NaN
-            const totalNumber = first + 100; //hasilnya tetap nan
-            document.writeln(`<p>${totalNumber}</p>`);
-            
-            //fungsi untuk mengecek jika itu NaN atau Bukan
-            document.writeln(`<p>${isNaN(a)}</p>`);//false karna a number = 39
-            document.writeln(`<p>${isNaN(100)}</p>`); //false karna 100 number
-            document.writeln(`<p>${isNaN(NaN)}</p>`); //true 
-            document.writeln(`<p> ${isNaN('123.4a')}</p>`)// true not a number
-            document.writeln(`<p> ${isNaN('100')}</p>`)// false karena 100 == '100';
+                //mengoperasikan nilai NaN
+                const first = Number("salah"); // NaN
+                const totalNumber = first + 100; //hasilnya tetap nan
+                document.writeln(`<p>${totalNumber}</p>`);
+                
+                //fungsi untuk mengecek jika itu NaN atau Bukan
+                document.writeln(`<p>${isNaN(a)}</p>`);//false karna a number = 1
+                document.writeln(`<p>${isNaN(100)}</p>`); //false karna 100 number
+                document.writeln(`<p>${isNaN(NaN)}</p>`); //true 
+                document.writeln(`<p> ${isNaN('123.4a')}</p>`)// true not a number
+                document.writeln(`<p> ${isNaN('100')}</p>`)// false karena 100 == '100';
         </script>
     </body>
 </html>

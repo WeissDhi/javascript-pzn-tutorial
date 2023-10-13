@@ -12,11 +12,12 @@
         let mahasiswa = {
             Nama : "Teuku Ardhi",
             Kelas : "2IA28",
-            NPM : 51421472
+            NPM : 51421472,
+            Nilai : 92
         }
         
         if("Nilai" in mahasiswa){
-        document.writeln(`<p>Parameter tersebut ada di dalam Objet : ${mahasiswa.Nama}</p>`);
+        document.writeln(`<p>Parameter tersebut ada di dalam Objet : ${mahasiswa.Nilai}</p>`);
         }else{
             document.writeln(`<p> Parameter tersebut tidak ada di dalam Object </p>`);
         }
@@ -25,7 +26,7 @@
         //pengecekan di objet supaya mengabaikan null atau undefined
         let siswa = {
             nama: 'Reza Rahardian',
-            kelas: undefined,
+            kelas: "2IA28",
             jurusan: undefined
         };
         
@@ -37,7 +38,7 @@
 
         //pengecekan di dalam array
         const names = [null, 'Joko', undefined, "Anwar"]
-        const result = 0 in names;
+        const result = 3 in names; //indexnya bukan nilai dari indexnya
         document.writeln(`<p> ${result} </p`); //tetap true atau ada
         
         //Pengecekan di array supaya mengabaikan null atau undefined pada index ke-                 `2

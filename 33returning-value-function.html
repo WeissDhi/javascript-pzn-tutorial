@@ -32,7 +32,7 @@
                 return "Not a Valid Value";
             }
         }
-        const nilai = nilaiAkhir(95);
+        const nilai = nilaiAkhir(95); //function nilai akhir disimpan dalam variable
         document.writeln(`<p> Nilai anda adalah ${nilai}`);
 
         //menghitung luas segitiga
@@ -48,7 +48,7 @@
         function isContains(array, searchValue) {
             // Melakukan perulangan untuk setiap elemen dalam array
             for (const element of array) {
-                console.info(`Iterasi elemen ${element}`);
+                console.info(`array value = ${element}`);
                 
                 // Memeriksa apakah elemen saat ini sama dengan nilai yang dicari
                 if (element === searchValue) {
@@ -64,7 +64,7 @@
         const arraynya = [124, 24, 2, 51, "teuku", 12.5];
 
         // Nilai yang ingin dicari dalam array
-        const cari = "Ardhi";
+        const cari = "ardhi";
 
         // Memanggil fungsi isContains dengan arraynya dan nilai yang ingin dicari
         const found = isContains(arraynya, cari);
@@ -76,7 +76,7 @@
         //mencari properti pada object
         function isPropertyInObject(obj, searchProperty) {
             for (const key in obj) {
-                console.info(`Iterasi properti ${key}`);
+                console.info(`properti object = ${key}`);
                 if (key === searchProperty) {
                     return true;
                 }
@@ -91,7 +91,7 @@
             hobi : "Bermain billiard"
         };
         
-        const search = "hobi";
+        const search = "usia";
         const menemukan = isPropertyInObject(objek, search);
         
         document.writeln(`<p>Apakah ada properti ${search} dalam objek? : ${menemukan}</p>`);
@@ -102,7 +102,8 @@
         //mencari value pada object
         function isPropertyExists(obj, searchValue) {
             for (const key in obj) {
-                console.info(`Iterasi properti ${key}`);
+                const value = obj[key];
+                console.info(`Value obejct: ${value}`);
                 if (obj[key] === searchValue) {
                     return true;
                 }
@@ -116,7 +117,7 @@
             pekerjaan: "Developer"
         };
         
-        const mencari = "Developer";
+        const mencari = 30;
         
         const ditemukan = isPropertyExists(object, mencari);
         

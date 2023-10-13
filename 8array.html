@@ -64,29 +64,35 @@
             let arrayData= ["Teuku", "Ardhi", 'Firmansyah', 1, 23.5, true]; //ada 5 index
 
             //menambah data (create)
+            console.warn("Create")
             arrayData.push("Belajar", "javascript")//akan bertambah ke index 6 dan 7
+            arrayData.unshift("Ini Depan", "ini kedua"); //akan bertambah ke index 1 dan 2
             console.table(arrayData);
 
             //mendapatkan panjang array
             console.info("panjang array data adalah: "+arrayData.length);
 
+            console.warn("Read")
             //melihat/mendapatkan posisi data (read)
             console.info(arrayData[2]);
             console.info(arrayData[7]);
             console.info(arrayData[4]);
 
             //mengubah data array (update)
-            arrayData [0] = 'Saya';
+            console.warn("Update")
+            arrayData [0] = 'Saya mengubah';
             arrayData [1] = 'Sedang';
             arrayData [2] = 'Ingin';
             console.table(arrayData);
 
             //menghapus data array (delete) namun tidak bergeser index nya
+            console.warn("Delete")
             delete arrayData[3];
             delete arrayData[4];
             delete arrayData[5];
             console.table(arrayData);
 
+            console.log(" ")
             //menambah array baru lagi maka akan tersimpan di index baru selanjutnya bukan menggantikan posisi array yang terdelete
             arrayData.push("Di Youtube", "dan", "Di UDEMY")
             console.table(arrayData);

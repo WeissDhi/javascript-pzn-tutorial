@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>while loop</title>
-</head>
-<body>
-    <script>   
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>while loop</title>
+    </head>
+    <body>
+        <script>   
         //perulangan genap
         let number = 0;
         while (number < 100) {
             if (number % 2 === 1) {
                 number++;
-                continue;
+                
             }
             document.writeln(`<p>Perulangan ke-${number}</p>`);
            number++;
         }
+
+        let angka = -3;
+        while (angka < 30) {
+          if (angka % 2 !== 0) {
+            console.log(`angka ganjil = ${angka}`);
+            angka++;
+          } else {
+            console.log(`angka genap = ${angka}`);
+            angka++;
+          }
+        }
     </script>
 
-</body>
+    </body>
 </html>

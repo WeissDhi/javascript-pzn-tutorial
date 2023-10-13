@@ -15,14 +15,15 @@
         }
 
         //undifined di dalam array
-        const names = ["teuku", "fahri", "hasbi"];
+        const names = ["teuku", "fahri","Hasbi"];
         if (names[2] === undefined) {
             console.info('INI UNDIFINED');
         }else{
             console.info(`Defined namanya adalah ${names[2]}`);
         }
         //mendelete array
-        delete names[1];
+        delete names[0]; //cuma didelete indexnya aja  (ilangoin index)
+        names.splice(1, 1); //ilangin array
         console.info(names[1]);
         console.table(names);
 
@@ -32,6 +33,7 @@
          //   nama : "Ardhi",
             kelas : "2IA28"
         };
+        console.table(orang);
         if (orang.nama === undefined){
             console.info('UNDIFINED');
         }else{
